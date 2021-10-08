@@ -7,7 +7,7 @@ metadata:
 spec:
   selector:
     app: results-app
-  type: NodePort
+  type: LoadBalancer
   ports:
     - port: 80
       targetPort: 80
