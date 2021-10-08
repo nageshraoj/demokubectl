@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: results-ui-app
+  labels:
+    app: voting-app-demo
+spec:
+  selector:
+    matchLabels:
+      app: results-app
+  replicas: 1
+  template:
+    metadata:
+      name: ui-reults
+      labels:
+        app: results-app
+    spec:
+      containers:
+        - name: results-ui
+          image: eesprit/voting-app-result
+          ports:
+            - containerPort: 80
